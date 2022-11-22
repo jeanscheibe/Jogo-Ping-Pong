@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <canvas id = "sheet" width="600" height="500"></canvas>
+
+        <script>
+
+            var folhaDesenho = document.getElementById("sheet");
+            var areaDesenho = folhaDesenho.getContext("2d");
+
+            var larguraCampo = 600;
+            var alturaCampo = 500;
+            var larguraLinha = 5;
+            var larguraBola = 5;
+            var alturaRaquete = 50;
+
+            
+            //No comando areaDesenho.fillRect entender os parâmetros dentro dos parênteses como
+            //(Ponto inicial x, ponto inicial y, largura, altura)
+
+            //Campo
+            areaDesenho.fillStyle = '#286047';
+            areaDesenho.fillRect(0, 0, larguraCampo, alturaCampo);
+
+            //Linha
+            areaDesenho.fillStyle = '#ffffff';
+            areaDesenho.fillRect(larguraCampo/2 - larguraLinha/2, 0, larguraLinha, larguraCampo);
+
+            //Raquete esquerda
+            areaDesenho.fillRect(0, 225, larguraLinha, alturaRaquete);
+
+            //Raquete direita
+            areaDesenho.fillRect(larguraCampo - larguraLinha, 225, larguraLinha, alturaRaquete);
+
+            //Bola
+            areaDesenho.fillRect(30,30, larguraBola, larguraBola);
+
+        </script>
+     
+    </body>
+</html>
