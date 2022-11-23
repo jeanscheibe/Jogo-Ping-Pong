@@ -1,0 +1,53 @@
+<html>
+    <body>
+        <!-- Criação da "tela" através da tag canvas, definindo nome, largura e altura -->
+        <canvas id="folha" width="600" height="500"></canvas>
+        
+        <script>
+
+            window.onload = function(){
+                setInterval(executar, 1000 / 30);
+            }
+
+            var posicaoBolaX = posicaoBolaY = 10;
+
+            function executar(){
+                // todo o código do jogo
+
+                // Chamada da "tela" e definição da area de desenho
+                var folhaDesenho = document.getElementById("folha");
+                var areaDesenho = folhaDesenho.getContext("2d");
+
+                var larguraCampo = 600;
+                var alturaCampo = 500;
+                var espessuraRede = 5;
+              
+                var diametroBola = 10;
+
+                // Campo
+                
+                areaDesenho.fillStyle = "#286047"; //Cor verde
+
+                // Definição de atributos, fillRect (definindo um retãngulo), posição x, posição y, largura, altura 
+                areaDesenho.fillRect(0,0, larguraCampo, alturaCampo);
+
+                // Redefinição para cor branca
+                areaDesenho.fillStyle = "#ffffff";
+
+                // Rede
+                areaDesenho.fillRect((larguraCampo /2 - espessuraRede / 2), 0, espessuraRede, alturaCampo);
+
+                // Desenha a bola
+                areaDesenho.fillRect(posicaoBolaX - diametroBola/2, posicaoBolaY - diametroBola/2, diametroBola, diametroBola);
+
+                posicaoBolaX = posicaoBolaX + 1;
+                posicaoBolaY = posicaoBolaY +1;
+
+                console.log("Tic-Tac");
+
+
+            }
+
+        </script>
+    </body>
+</html>
